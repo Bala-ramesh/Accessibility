@@ -1,0 +1,116 @@
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+  margin-top: auto;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-10) var(--space-6) var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: var(--space-8) var(--space-4);
+  }
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-8);
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .top {
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.logoMark {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+}
+
+.tagline {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  max-width: 32ch;
+  font-style: italic;
+}
+
+.links {
+  flex-shrink: 0;
+}
+
+.linkList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.link:hover {
+  color: var(--accent);
+}
+
+.link:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+  border-radius: 2px;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border);
+}
+
+.legal {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  max-width: none;
+}
+
+.externalLink {
+  color: var(--text-secondary);
+  text-underline-offset: 3px;
+  transition: color var(--transition);
+}
+
+.externalLink:hover {
+  color: var(--accent);
+}
+
+.externalLink:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+  border-radius: 2px;
+}

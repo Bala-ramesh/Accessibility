@@ -1,0 +1,114 @@
+/* ============================================
+   Code Patterns hub page
+   ============================================ */
+
+.main {
+  width: 100%;
+}
+
+.main:focus {
+  outline: none;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6) var(--space-16);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: var(--space-8) var(--space-4) var(--space-12);
+  }
+}
+
+/* ── Page header ──────────────────────────────── */
+.pageHeader {
+  margin-bottom: var(--space-8);
+}
+
+.pageTitle {
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.pageIntro {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
+  max-width: 62ch;
+  line-height: 1.75;
+}
+
+/* ── Section heading ──────────────────────────── */
+.topicsHeading {
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Card grid ────────────────────────────────── */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+  text-decoration: none;
+  color: var(--text-primary);
+  height: 100%;
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.card:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+.cardTag {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+}
+
+.cardTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.cardArrow {
+  align-self: flex-end;
+  font-size: 1.125rem;
+  color: var(--accent);
+  margin-top: auto;
+}

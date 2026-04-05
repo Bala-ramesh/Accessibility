@@ -1,0 +1,845 @@
+/* ============================================
+   Shared inner page styles
+   ============================================ */
+
+.main {
+  width: 100%;
+}
+
+.main:focus {
+  outline: none;
+}
+
+.inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-6) var(--space-16);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: var(--space-8) var(--space-4) var(--space-12);
+  }
+}
+
+/* Page header */
+.pageHeader {
+  margin-bottom: var(--space-8);
+}
+
+.pageTitle {
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.pageIntro {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-secondary);
+  max-width: 64ch;
+  line-height: 1.75;
+}
+
+/* Section headings */
+.sectionTitle {
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.sectionIntro {
+  color: var(--text-secondary);
+  max-width: 64ch;
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+/* ── WCAG principles ──────────────────────────── */
+.principleList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .principleList {
+    grid-template-columns: 1fr;
+  }
+}
+
+.principleCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+  height: 100%;
+}
+
+.principleHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.principleLetterMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.principleName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.principleDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.criteriaList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-3);
+  margin-top: var(--space-1);
+}
+
+.criteriaItem {
+  display: flex;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.bullet {
+  color: var(--accent);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
+/* ── Conformance levels ───────────────────────── */
+.levelList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.levelCard {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+}
+
+.levelBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 48px;
+  height: 48px;
+  background: var(--accent);
+  color: #ffffff;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.levelTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.levelDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Table ────────────────────────────────────── */
+.tableWrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.tableWrapper:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+  font-family: var(--font-mono);
+}
+
+.table th {
+  padding: var(--space-3) var(--space-5);
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.table td {
+  padding: var(--space-3) var(--space-5);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+.table tr:hover td {
+  background: var(--bg-surface);
+}
+
+.stat {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── WCAG page additions ──────────────────────── */
+
+/* Body text (prose paragraphs, not section intros) */
+.bodyText {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 64ch;
+  margin-bottom: var(--space-5);
+}
+
+/* Conformance 3-column grid */
+.conformanceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .conformanceGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.conformanceCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+  height: 100%;
+  position: relative;
+}
+
+.conformanceCardHighlight {
+  border-left: 3px solid var(--accent);
+}
+
+.conformanceTag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 100px;
+  padding: 2px var(--space-3);
+  align-self: flex-start;
+}
+
+.conformanceBadge {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.conformanceTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.conformanceDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* Version list */
+.versionList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.versionCard {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+}
+
+@media (max-width: 768px) {
+  .versionCard {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+}
+
+.versionMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  min-width: 64px;
+}
+
+.versionTag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.versionTagAccent {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.versionLabel {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.versionBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.versionTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.versionDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* Pull quote / stakeholder explainer */
+.pullQuote {
+  border-left: 3px solid var(--accent);
+  padding: var(--space-6) var(--space-8);
+  margin: 0;
+  background: var(--bg-surface);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+@media (max-width: 768px) {
+  .pullQuote {
+    padding: var(--space-5) var(--space-5);
+  }
+}
+
+.pullQuoteText {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 64ch;
+  font-style: italic;
+}
+
+/* Myth cards */
+.mythList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mythCard {
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.mythStatement {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  max-width: none;
+}
+
+.mythSymbol {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+  font-size: 0.875rem;
+}
+
+.mythCorrection {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  padding-left: calc(var(--space-3) + 0.875rem); /* align with myth text past the ✕ */
+}
+
+/* ── AT page ──────────────────────────────────── */
+.atGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .atGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.atCard {
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.atCardTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-3);
+}
+
+.atCardDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.tipList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-3);
+}
+
+.tipItem {
+  display: flex;
+  gap: var(--space-2);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+/* ── Code Patterns ────────────────────────────── */
+.trackNav {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-4);
+}
+
+.trackTab {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-5);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color var(--transition), color var(--transition), background-color var(--transition);
+}
+
+.trackTab:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.trackTab:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+.trackTabActive {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.trackTabActive:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+.patternList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.patternCard {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.patternHeader {
+  padding: var(--space-5) var(--space-6);
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.patternTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.patternDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.codeBlock {
+  padding: var(--space-5) var(--space-6);
+  background: var(--bg);
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin: 0;
+  border: none;
+  border-radius: 0;
+}
+
+.componentCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-8);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+}
+
+.componentCardTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.componentCardDesc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+/* ── Testing page ─────────────────────────────── */
+.phaseList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.phaseCard {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-start;
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+}
+
+.phaseNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.phaseContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.phaseTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.phaseDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Tools page ───────────────────────────────── */
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .toolsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.toolCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+}
+
+.toolName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.toolType {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.toolDesc {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.toolLink {
+  font-size: 0.875rem;
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+/* ── About page ───────────────────────────────── */
+.aboutLayout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .aboutLayout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.aboutAside {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  position: sticky;
+  top: calc(64px + var(--space-6));
+}
+
+.avatarPlaceholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--accent);
+  max-width: 200px;
+}
+
+.aboutName {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.aboutRole {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.aboutSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.aboutSectionTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent);
+  padding-left: var(--space-3);
+}
+
+.aboutPara {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 60ch;
+}
+
+.tagList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag {
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  margin-bottom: 0;
+}
+
+.avatarPlaceholder {
+  width: 200px;               /* width of avatar */
+  height: 200px;              /* height of avatar */
+  border-radius: 50%;         /* makes it circular */
+  object-fit: cover;          /* ensures the image fills the circle without distortion */
+  display: block;             /* removes inline spacing issues */
+  margin: 0 auto 1rem auto;   /* center and spacing below */
+  border: 2px solid #ccc;     /* optional border for style */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow */
+}

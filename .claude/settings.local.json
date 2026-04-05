@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(rm /Users/bala/Desktop/Accessibility/src/counter.ts /Users/bala/Desktop/Accessibility/src/main.ts /Users/bala/Desktop/Accessibility/src/style.css)",
+      "Bash(mkdir -p /Users/bala/Desktop/Accessibility/src/components /Users/bala/Desktop/Accessibility/src/pages /Users/bala/Desktop/Accessibility/src/styles)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:www.w3.org)",
+      "WebFetch(domain:rawgit.com)",
+      "WebFetch(domain:w3c.github.io)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch",
+      "Bash(wc -l /Users/bala/Desktop/Accessibility/src/pages/code-patterns/*.jsx /Users/bala/Desktop/Accessibility/src/pages/code-patterns/*.js /Users/bala/Desktop/Accessibility/src/pages/code-patterns/*.css)",
+      "Bash(wc:*)"
+    ]
+  }
+}

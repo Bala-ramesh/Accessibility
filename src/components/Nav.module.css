@@ -1,0 +1,290 @@
+/* ============================================
+   Nav — Accessible Navigation
+   ============================================ */
+
+/* ── Header shell ──────────────────────────── */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-6);
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .inner {
+    padding: var(--space-4);
+  }
+}
+
+/* ── Logo ──────────────────────────────────── */
+
+.logo {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  text-decoration: none;
+  color: var(--text-primary);
+  flex-shrink: 0;
+  border-radius: var(--radius);
+  transition: opacity var(--transition);
+}
+
+.logo:hover {
+  opacity: 0.75;
+}
+
+.logo:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+.logoMark {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+
+.logoText {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-weight: 800;
+}
+
+@media (max-width: 480px) {
+  .logoText {
+    display: none;
+  }
+}
+
+/* ── Desktop nav ───────────────────────────── */
+
+.desktopNav {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Desktop nav link — base ───────────────── */
+
+.navLink {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius);
+  /* Transition covers both states; global reduced-motion rule collapses duration */
+  transition:
+    background-color var(--transition),
+    color var(--transition);
+}
+
+/* ── Desktop nav link — hover ──────────────── */
+
+.navLink:hover {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+}
+
+/* ── Desktop nav link — active (current page) ─
+   aria-current="page" is added automatically by
+   React Router NavLink when the route matches.   */
+
+.navLinkActive {
+  background-color: var(--color-primary);
+  color: var(--color-bg-primary);
+  font-weight: 700;                   /* non-colour differentiator */
+}
+
+.navLinkActive:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-bg-primary);
+}
+
+/* ── Desktop nav link — focus-visible ─────── */
+
+.navLink:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+/* ── Bonus: subtle lift on motion-OK devices ─ */
+
+@media (prefers-reduced-motion: no-preference) {
+  .navLink {
+    transition:
+      background-color var(--transition),
+      color var(--transition),
+      transform var(--transition),
+      box-shadow var(--transition);
+  }
+
+  .navLink:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  }
+
+  .navLinkActive:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+  }
+}
+
+/* ── Actions (toggle + hamburger) ─────────── */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+/* ── Hamburger button ──────────────────────── */
+
+.menuButton {
+  display: none;
+  background: none;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 1;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.menuButton:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.menuButton:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.menuIcon {
+  display: block;
+  width: 18px;
+  text-align: center;
+}
+
+/* ── Mobile nav panel ──────────────────────── */
+
+.mobileNav {
+  display: none;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+@media (max-width: 768px) {
+  .mobileNav {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 200ms ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobileNav {
+      transition: none;
+    }
+  }
+
+  .mobileNavOpen {
+    max-height: 400px;
+  }
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: var(--space-4);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* ── Mobile nav link — base ────────────────── */
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  border-radius: var(--radius);
+  /* Left border slot: always present so layout doesn't shift on active */
+  border-left: 3px solid transparent;
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.mobileNavLink:hover {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+}
+
+/* ── Mobile nav link — active ──────────────── */
+
+.mobileNavLinkActive {
+  background-color: var(--color-primary);
+  color: var(--color-bg-primary);
+  font-weight: 700;                        /* non-colour differentiator  */
+  border-left-color: var(--color-secondary); /* extra structural indicator */
+}
+
+.mobileNavLinkActive:hover {
+  background-color: var(--color-primary-hover);
+  color: var(--color-bg-primary);
+}
+
+/* ── Mobile nav link — focus-visible ──────── */
+
+.mobileNavLink:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}

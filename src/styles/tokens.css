@@ -1,0 +1,111 @@
+/* ============================================
+   Design Tokens — Accessibility Knowledge Hub
+   ============================================ */
+
+:root {
+  /* ── Brand colours ──────────────────────────── */
+  --color-primary:        #1B4332;  /* forest green — interactive links */
+  --color-primary-hover:  #14532D;  /* darker green on hover */
+  --color-secondary:      #40916C;  /* mid green — headings, tags */
+  --color-accent:         #D4A853;  /* gold — action buttons, badges */
+  --color-accent-hover:   #B8892E;  /* darker gold on hover */
+  --color-warning:        #C9614A;  /* terracotta — errors, warnings */
+
+  /* ── Light mode backgrounds ─────────────────── */
+  --color-bg-primary:     #FAF7F2;  /* warm cream — page background */
+  --color-bg-secondary:   #F0EBE3;  /* warm grey — reference cards */
+  --color-bg-surface:     #E8E0D5;  /* deeper warm — dividers, borders */
+
+  /* ── Light mode text ────────────────────────── */
+  --color-text-primary:   #1B4332;  /* forest green — headings */
+  --color-text-body:      #2D4A3E;  /* dark green — body text */
+  --color-text-secondary: #5C7A6E;  /* muted green — secondary text */
+  --color-text-tertiary:  #8A9E96;  /* hint text, placeholders */
+
+  /* ── Light mode borders ─────────────────────── */
+  --color-border-primary:   #1B4332;
+  --color-border-secondary: #C5B9A8;
+  --color-border-tertiary:  #E8E0D5;
+
+  /* ── Dark mode backgrounds (reference) ─────── */
+  --color-dark-bg-primary:   #0D1F17;
+  --color-dark-bg-secondary: #142B1E;
+  --color-dark-bg-surface:   #1C3828;
+
+  /* ── Dark mode text (reference) ─────────────── */
+  --color-dark-text-primary:   #FAF7F2;
+  --color-dark-text-body:      #D4C9B8;
+  --color-dark-text-secondary: #9EB8A8;
+
+  /* ── Dark mode borders (reference) ─────────── */
+  --color-dark-border-primary:   #40916C;
+  --color-dark-border-secondary: #1C3828;
+  --color-dark-border-tertiary:  #142B1E;
+
+  /* ── Semantic — same in both modes ─────────── */
+  --color-success:  #40916C;
+  --color-error:    #C9614A;
+  --color-info:     #2D6A4F;
+  --color-caution:  #D4A853;
+
+  /* ── Font ───────────────────────────────────── */
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+
+  /* ── Spacing scale ──────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ── Border ─────────────────────────────────── */
+  --radius: 6px;
+  --border-width: 1px;
+
+  /* ── Focus ring ─────────────────────────────── */
+  --focus-outline: 3px solid var(--color-primary);
+  --focus-offset: 2px;
+
+  /* ── Transitions ────────────────────────────── */
+  --transition: 150ms ease;
+
+  /* ── Layout ─────────────────────────────────── */
+  --max-width: 1100px;
+  --content-width: 720px;
+  --nav-height: 54px;
+
+  /* ── Shorthand aliases — keep all component CSS working ── */
+  --accent:         var(--color-primary);
+  --accent-hover:   var(--color-primary-hover);
+  --bg:             var(--color-bg-primary);
+  --bg-surface:     var(--color-bg-secondary);
+  --text-primary:   var(--color-text-primary);
+  --text-secondary: var(--color-text-body);
+  --border:         var(--color-border-secondary);
+  --color-do:       var(--color-success);
+  --color-dont:     var(--color-error);
+}
+
+/* ── Dark mode overrides ─────────────────────── */
+.dark {
+  --color-primary:        #52B788;  /* light green — visible on dark bg (~7:1 contrast) */
+  --color-primary-hover:  #74C69D;  /* lighter green on hover */
+  --color-secondary:      #74C69D;  /* mid-light green — labels, tags */
+  --color-bg-primary:     #0D1F17;
+  --color-bg-secondary:   #142B1E;
+  --color-bg-surface:     #1C3828;
+  --color-text-primary:   #FAF7F2;
+  --color-text-body:      #D4C9B8;
+  --color-text-secondary: #9EB8A8;
+  --color-text-tertiary:  #6B8A78;
+  --color-border-primary:   #40916C;
+  --color-border-secondary: #1C3828;
+  --color-border-tertiary:  #142B1E;
+}
