@@ -49,6 +49,27 @@ export default function About() {
                 Frontend developer  &amp; Accessibility Consultant
               </p>
             </div>
+            <div className={styles.contactLinks}>
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/balamuguthan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.contactLink}
+                aria-label="Visit my LinkedIn profile"
+              >
+                LinkedIn
+              </a>
+
+              {/* Email */}
+              <a
+                href="mailto:accessibilityworkswonders@gmail.com"
+                className={styles.contactLink}
+                aria-label="Send me an email"
+              >
+                Email
+              </a>
+            </div>
           </aside>
 
           {/* Main content */}

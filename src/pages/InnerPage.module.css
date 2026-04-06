@@ -843,3 +843,32 @@
   border: 2px solid #ccc;     /* optional border for style */
   box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* subtle shadow */
 }
+
+
+.contactLinks {
+  display: flex;          /* parent flex container */
+  gap: 40px;              /* space between LinkedIn and Email */
+  margin-top: var(--space-6); /* optional vertical spacing */
+}
+
+.contactLink {
+  display: inline-flex;   /* icon + text inline */
+  align-items: center;    /* vertical align if you add icons later */
+  gap: 8px;               /* space between icon and text */
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+/* Hover */
+.contactLink:hover {
+  background: var(--color-accent);
+  color: var(--color-bg-primary);
+  transform: translateY(-1px);
+  font-weight: 700;
+}
+
+/* Focus (accessibility) */
+.contactLink:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
